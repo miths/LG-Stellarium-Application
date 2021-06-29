@@ -8,8 +8,7 @@
 
 
     <!-- Electron Javascript -->
-    <script src="app.js" charset="utf-8"></script>
-    
+    <script src="app.js" async defer charset="utf-8"></script>
   </head>
 
   <body>
@@ -50,20 +49,16 @@
                 <label>Offset</label>
                 <input type="number" class="form-control" placeholder=2 id="offset">
             </div>
+
             
-            <br>
-            <div class="form-actions">
-              
-              
-            </div>
-            <br>
-            <div class="form-actions">
-                <button type="submit" class="btn btn-form btn-primary">Launch Stellarium</button>
-            </div>
 
           </form>
+          <br>  
           <button onclick="config_stel()" class="btn btn-form btn-default">Configure Stellarium</button>
+          <br> <br>
+          <button onclick="launch_stel()" class="btn btn-form btn-primary">Launch Stellarium</button>
         </div>
+
 
         
 
@@ -71,5 +66,5 @@
     </div>
     
   </body>
-  <script src="window.js"></script>
+  
 </html>

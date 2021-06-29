@@ -1,6 +1,7 @@
 
     const fs = require('fs')
     , ini = require('ini');
+    const cp = require("child_process");
 
 function config_stel(){
 
@@ -19,4 +20,11 @@ function config_stel(){
     config.LGConnect= data;
 
     fs.writeFileSync('/home/mithil/.stellarium/config.ini', ini.stringify(config, { section: '' }))
+}
+
+
+function launch_stel(){
+    cp.exec("stellarium"); // notice this without a callback..
+    //process.exit(0); // exit this nodejs process
+
 }
