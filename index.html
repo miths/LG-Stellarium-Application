@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photon</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.css">
+
+
+    <!-- Electron Javascript -->
+    <script src="app.js" charset="utf-8"></script>
+    
+  </head>
+
+  <body>
+    <!-- Wrap your entire app inside .window -->
+    <div class="window">
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+      </header>
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="padded-more">
+          <h1>Welcome to LG-Stelarium</h1>
+          
+          <form>
+            <div class="form-group">
+
+                <div class="form-group">
+                    <select class="form-control" id="this_pc">     
+                        <option value="1">Master</option>
+                        <option value="0">Slave</option>
+                    </select>
+                </div>
+
+              <label>Name</label>
+              <input type="text" class="form-control" placeholder="Name" id="name">
+            </div>
+            
+            
+
+            <div class="form-group">
+                <label>Master's IP address</label>
+                <input type="text" class="form-control" placeholder="192.168.43.207" id="ip_addr">
+            </div>
+
+
+            <div class="form-group">
+                <label>Offset</label>
+                <input type="number" class="form-control" placeholder=2 id="offset">
+            </div>
+            
+            <br>
+            <div class="form-actions">
+              
+              
+            </div>
+            <br>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-form btn-primary">Launch Stellarium</button>
+            </div>
+
+          </form>
+          <button onclick="config_stel()" class="btn btn-form btn-default">Configure Stellarium</button>
+        </div>
+
+        
+
+      </div>
+    </div>
+    
+  </body>
+  <script src="window.js"></script>
+</html>
