@@ -6,6 +6,7 @@
     var ip = require("ip");
     var ip_addr ;
     var name ;
+    var this_pc;
     var displays;
     var ip_list= [];
     var PORT = 33333;
@@ -19,7 +20,7 @@ function config_stel(){
      name = document.getElementById("name").value;
     var offset = document.getElementById("offset").value;
     ip_addr = document.getElementById("ip_addr").value;
-    var this_pc = document.getElementById("this_pc").value;
+    this_pc = document.getElementById("this_pc").value;
     displays= document.getElementById("displays").value;
 
     var config = ini.parse(fs.readFileSync('/home/mithil/.stellarium/config.ini', 'utf-8'));
@@ -66,7 +67,7 @@ function waitForLaunch(){
 
 
 function launch_stel(){
-    cp.exec("stellarium"); // notice this without a callback..
+    // cp.exec("stellarium"); // notice this without a callback..
     var HOST = ip_addr;
     if (this_pc== 1){
         var message = new Buffer('Launch_Stellarium');
@@ -99,24 +100,33 @@ function socket_server(){
     //var connected_displays= 0;
     server.on('message', function(message, remote) {
         console.log(remote.address + ':' + remote.port +' - ' + message);
-        var msg_arr = message.split("-");
+        var msg_arr = message.toString().split("-");
         if (msg_arr[0]== "Launch_Stellarium") {
             cp.exec("stellarium");
         }
         if (msg_arr[0]== "connect") {
             ip_list.push(remote.address);
-            var node = document.createElement("li");                 // Create a <li> node
-            var textnode = document.createTextNode(name);         // Create a text node
+            var node = document.createElement("LI");                 // Create a <li> node
+            var textnode = document.createTextNode(msg_arr[1]);         // Create a text node
             node.appendChild(textnode);                              // Append the text to <li>
-            document.getElementById("connected_list").appendChild(node); 
+            document.getElementById("connected_ul").appendChild(node); 
+        }
+
+        console.log(ip_list.length);
+        if (ip_list.length== displays){
+            console.log("launch if statemwnt");
+            launch_stel();
         }
     });
 
-    server.bind(PORT, HOST);
-
+    
+    console.log(ip_list.length);
     if (ip_list.length== displays){
+        console.log("launch if statemwnt");
         launch_stel();
     }
+
+    server.bind(PORT, HOST);
 }
 
 function socket_client(){
