@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Photon</title>
+    <title>LG-Stellarium</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/photon.css">
@@ -27,36 +27,37 @@
             <div class="form-group">
 
                 <div class="form-group">
-                    <select class="form-control" id="this_pc">     
+                    <select class="form-control" id="this_pc" onchange="thisPC_changed()">     
                         <option value="1">Master</option>
                         <option value="0">Slave</option>
                     </select>
                 </div>
-
+              
+                <div class="form-group" id= "name-div">
               <label>Name</label>
               <input type="text" class="form-control" placeholder="Name" id="name">
             </div>
             
             
 
-            <div class="form-group">
+            <div class="form-group" id= "ip_addr-div">
                 <label>Master's IP address</label>
                 <input type="text" class="form-control" placeholder="192.168.43.207" id="ip_addr">
             </div>
 
 
-            <div class="form-group">
+            <div class="form-group" id= "offset-div">
                 <label>Offset</label>
                 <input type="number" class="form-control" placeholder=2 id="offset">
             </div>
 
-            <div class="form-group">
+            <div class="form-group" id= "displays-div">
               <label>Total displays</label>
               <input type="number" class="form-control" placeholder=2 id="displays">
           </div>
 
             
-
+        </div>
           </form>
 
           <div class="connected">
@@ -68,7 +69,6 @@
           <div class="buttons">
             <button onclick="config_stel()" class="btn btn-form btn-default">Configure Stellarium</button>
             <br> <br>
-            <button onclick="launch_stel()" class="btn btn-form btn-primary">Launch Stellarium</button>
           </div>
         </div>
 

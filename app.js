@@ -41,6 +41,24 @@ function config_stel(){
     }
 }
 
+function thisPC_changed(){
+    if (document.getElementById("this_pc").value== 1){
+        document.getElementById("name-div").style.display = 'none';
+        document.getElementById("ip_addr-div").style.display = 'none';
+        document.getElementById("offset-div").style.display = 'none';
+        document.getElementById("displays-div").style.display = 'block';
+    }
+    else {
+        document.getElementById("name-div").style.display = 'block';
+        document.getElementById("ip_addr-div").style.display = 'block';
+        document.getElementById("offset-div").style.display = 'block';
+        document.getElementById("displays-div").style.display = 'none';
+
+    }
+}
+
+thisPC_changed()
+
 function waitForLaunch(){
     var HOST =   ip.address();
         console.log("in server fn");
@@ -69,7 +87,7 @@ function launch_stel(){
     cp.exec("stellarium"); // notice this without a callback..
     var HOST = ip_addr;
     if (this_pc== 1){
-        var message = new Buffer('Launch_Stellarium');
+        var message = 'Launch_Stellarium';
         
         //var message= "Launch Stellarium";
         for (let i=0; i<ip_list.length; i++){
