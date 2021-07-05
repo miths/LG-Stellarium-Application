@@ -11,7 +11,6 @@
     var ip_list= [];
     var PORT = 33333;
     var dgram = require('dgram');
-const { waitForDebugger } = require('inspector');
     var client = dgram.createSocket('udp4');
 
 function config_stel(){
@@ -67,7 +66,7 @@ function waitForLaunch(){
 
 
 function launch_stel(){
-    // cp.exec("stellarium"); // notice this without a callback..
+    cp.exec("stellarium"); // notice this without a callback..
     var HOST = ip_addr;
     if (this_pc== 1){
         var message = new Buffer('Launch_Stellarium');
@@ -113,18 +112,14 @@ function socket_server(){
         }
 
         console.log(ip_list.length);
-        if (ip_list.length== displays){
+        if (ip_list.length== displays-1){
             console.log("launch if statemwnt");
             launch_stel();
         }
     });
 
     
-    console.log(ip_list.length);
-    if (ip_list.length== displays){
-        console.log("launch if statemwnt");
-        launch_stel();
-    }
+    
 
     server.bind(PORT, HOST);
 }
@@ -133,7 +128,7 @@ function socket_client(){
     
     var HOST = ip_addr;
     console.log("in client fn");
-    var message = new Buffer('connect-'+ name);
+    var message = 'connect-'+ name;
 
     client.send(message, 0, message.length, PORT, HOST, function(err, bytes) {
         if (err) throw err;
