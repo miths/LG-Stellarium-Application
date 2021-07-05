@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^13.1.4",
-    "ini": "^2.0.0"
+    "ini": "^2.0.0",
+    "ip": "^1.1.5"
   }
 }
