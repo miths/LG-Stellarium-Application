@@ -47,17 +47,19 @@ function thisPC_changed(){
         document.getElementById("ip_addr-div").style.display = 'none';
         document.getElementById("offset-div").style.display = 'none';
         document.getElementById("displays-div").style.display = 'block';
+        document.getElementById("addr_para-div").style.display = 'block';
     }
     else {
         document.getElementById("name-div").style.display = 'block';
         document.getElementById("ip_addr-div").style.display = 'block';
         document.getElementById("offset-div").style.display = 'block';
         document.getElementById("displays-div").style.display = 'none';
-
+        document.getElementById("addr_para-div").style.display = 'none';
     }
 }
 
 thisPC_changed()
+document.getElementById("addr_para").innerHTML="<b>IP address: </b>"+ ip.address();
 
 function waitForLaunch(){
     var HOST =   ip.address();

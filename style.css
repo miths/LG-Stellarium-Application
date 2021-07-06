@@ -3,10 +3,14 @@
     margin: auto;
 }
 
-button{
+.buttons{
+    width: fit-content;
     margin: auto;
 }
 
-body{
+#addr_para-div{
+    width: fit-content;
     margin: auto;
+    font-size: 1.5em;
 }
+

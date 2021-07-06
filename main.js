@@ -15,7 +15,7 @@ app.on('ready', ()=>{
     win.loadFile('index.html')
     win.webContents.openDevTools();
     const menu = Menu.buildFromTemplate(menuTemplate)
-    Menu.setApplicationMenu(menu)
+    Menu.setApplicationMenu(null)
 })
 
 
