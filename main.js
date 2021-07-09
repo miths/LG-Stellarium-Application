@@ -13,7 +13,7 @@ app.on('ready', ()=>{
         }
     })
     win.loadFile('index.html')
-    win.webContents.openDevTools();
+    //win.webContents.openDevTools();
     const menu = Menu.buildFromTemplate(menuTemplate)
     Menu.setApplicationMenu(null)
 })
