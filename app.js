@@ -88,18 +88,33 @@ function waitForLaunch(){
 function launch_stel(){
     cp.exec("stellarium"); // notice this without a callback..
     var HOST = ip_addr;
-    if (this_pc== 1){
-        var message = 'Launch_Stellarium';
-        
-        //var message= "Launch Stellarium";
-        for (let i=0; i<ip_list.length; i++){
-            client.send(message, 0, message.length, PORT, ip_list[i], function(err, bytes) {
-                if (err) throw err;
-                console.log('UDP message sent to ' + ip_list[i] +':'+ PORT);
-                client.close();
-            });
+    setTimeout(()=>{
+        if (this_pc== 1){
+            var message = 'Launch_Stellarium';
+            
+            //var message= "Launch Stellarium";
+            for (let i=0; i<ip_list.length; i++){
+                client.send(message, 0, message.length, PORT, ip_list[i], function(err, bytes) {
+                    if (err) throw err;
+                    console.log('UDP message sent to ' + ip_list[i] +':'+ PORT);
+                    client.close();
+                });
+            }
         }
-    }
+    } 
+    , 5000);
+    // if (this_pc== 1){
+    //     var message = 'Launch_Stellarium';
+        
+    //     //var message= "Launch Stellarium";
+    //     for (let i=0; i<ip_list.length; i++){
+    //         client.send(message, 0, message.length, PORT, ip_list[i], function(err, bytes) {
+    //             if (err) throw err;
+    //             console.log('UDP message sent to ' + ip_list[i] +':'+ PORT);
+    //             client.close();
+    //         });
+    //     }
+    // }
     //process.exit(0); // exit this nodejs process
 
 }

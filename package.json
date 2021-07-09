@@ -5,7 +5,10 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "pack-mac": "electron-packager . 'LG-Stellarium' --platform=darwin --arch=x64 --icon=icon/icon.icns --out=release --asar --overwrite",
+    "pack-win": "electron-packager . 'LG-Stellarium' --platform=win32 --arch=ia32 --iocn=icon/icon.ico --out=release --asar --overwrite",
+    "pack-linux": "electron-packager . 'LG-Stellarium' --platform=linux --arch=x64 --icon=icon/LG-Stel_logo.png --out=release --asar --overwrite"
   },
   "keywords": [],
   "author": "",
