@@ -13,6 +13,11 @@
     var dgram = require('dgram');
     var client = dgram.createSocket('udp4');
 
+
+    const os = require('os');
+
+    console.log(os.homedir());
+
 function config_stel(){
 
     console.log("in form read function");
@@ -22,7 +27,7 @@ function config_stel(){
     this_pc = document.getElementById("this_pc").value;
     displays= document.getElementById("displays").value;
 
-    var config = ini.parse(fs.readFileSync('/home/mithil/.stellarium/config.ini', 'utf-8'));
+    var config = ini.parse(fs.readFileSync(os.homedir()+'/.stellarium/config.ini', 'utf-8'));
     
     var data= {offset : offset,
     ip_addr : ip_addr,
@@ -30,7 +35,7 @@ function config_stel(){
     }
     config.LGConnect= data;
 
-    fs.writeFileSync('/home/mithil/.stellarium/config.ini', ini.stringify(config, { section: '' }))
+    fs.writeFileSync(os.homedir()+'/.stellarium/config.ini', ini.stringify(config, { section: '' }))
 
     if (this_pc== 1) {
         socket_server();
