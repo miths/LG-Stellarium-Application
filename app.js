@@ -21,7 +21,7 @@
         path= os.homedir()+'\\AppData\\Roaming\\Stellarium\\config.ini'
     }
     else if (process.platform == 'linux') {
-        path= os.homedir()+'/.stellarium/config.ini/config.ini'
+        path= os.homedir()+'/.stellarium/config.ini'
     }
 
     
