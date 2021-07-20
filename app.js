@@ -62,14 +62,16 @@ function thisPC_changed(){
     if (document.getElementById("this_pc").value== 1){
         document.getElementById("name-div").style.display = 'none';
         document.getElementById("ip_addr-div").style.display = 'none';
-        document.getElementById("offset-div").style.display = 'none';
+        document.getElementById("Hoffset-div").style.display = 'none';
+        document.getElementById("Voffset-div").style.display = 'none';
         document.getElementById("displays-div").style.display = 'block';
         document.getElementById("addr_para-div").style.display = 'block';
     }
     else {
         document.getElementById("name-div").style.display = 'block';
         document.getElementById("ip_addr-div").style.display = 'block';
-        document.getElementById("offset-div").style.display = 'block';
+        document.getElementById("Hoffset-div").style.display = 'block';
+        document.getElementById("Voffset-div").style.display = 'block';
         document.getElementById("displays-div").style.display = 'none';
         document.getElementById("addr_para-div").style.display = 'none';
     }
