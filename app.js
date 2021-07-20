@@ -32,14 +32,16 @@ function config_stel(){
 
     console.log("in form read function");
      name = document.getElementById("name").value;
-    var offset = document.getElementById("offset").value;
+    var Hoffset = document.getElementById("Hoffset").value;
+    var Voffset = document.getElementById("Voffset").value;
     ip_addr = document.getElementById("ip_addr").value;
     this_pc = document.getElementById("this_pc").value;
     displays= document.getElementById("displays").value;
 
     var config = ini.parse(fs.readFileSync(path, 'utf-8'));
     
-    var data= {offset : offset,
+    var data= {Hoffset : Hoffset,
+        Voffset : Voffset,
     ip_addr : ip_addr,
     thisPC : this_pc
     }
