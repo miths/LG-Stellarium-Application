@@ -14,40 +14,8 @@ app.on('ready', ()=>{
     })
     win.loadFile('index.html')
     //win.webContents.openDevTools();
+
+    // remove default menu
     const menu = Menu.buildFromTemplate(menuTemplate)
     Menu.setApplicationMenu(null)
 })
-
-
-
-
-const menuTemplate = [
-    ...(process.platform == 'darwin'? [{
-        label: app.getName(),
-        submenu: [
-       {role: 'about'}
-       ]
-       }] : []),
-    {
-        label: "File",
-        submenu: [
-            {
-                label: "Save",
-                accelerator: "CmdOrCtrl+S",
-                click(){ win.webContents.send('save-clicked')}
-            },
-
-            {
-                label: "Save As",
-                accelerator: "CmdOrCtrl+Shift+S",
-                click(){ 
-                    filePath = undefined
-                    win.webContents.send('save-clicked')
-                }
-            }
-        ]
-    },
-
-    {role: "editMenu"},
-    {role: "viewMenu"}
-]
