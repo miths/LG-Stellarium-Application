@@ -16,6 +16,6 @@ app.on('ready', ()=>{
     //win.webContents.openDevTools();
 
     // remove default menu
-    const menu = Menu.buildFromTemplate(menuTemplate)
+    //const menu = Menu.buildFromTemplate(menuTemplate)
     Menu.setApplicationMenu(null)
 })

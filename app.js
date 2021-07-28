@@ -46,7 +46,17 @@ function config_stel(){
     thisPC : this_pc
     }
     config.LGConnect= data;
-    config.
+    config.plugins_load_at_startup.Novae= true;
+    config.plugins_load_at_startup.Satellites= true;
+    config.plugins_load_at_startup.Supernovae= true;
+    config.plugins_load_at_startup.Pulsars= true;
+    config.plugins_load_at_startup.Exoplanets= true;
+
+    config.Exoplanets.enable_at_startup= true;
+    config.Satellites.auto_add_enabled= true;
+    config.Satellites.hide_invisible_satellites= true;
+
+
 
     fs.writeFileSync(path, ini.stringify(config, { section: '' }))
 
