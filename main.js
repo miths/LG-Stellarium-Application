@@ -13,7 +13,7 @@ app.on('ready', ()=>{
         }
     })
     win.loadFile('index.html')
-    //win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 
     // remove default menu
     //const menu = Menu.buildFromTemplate(menuTemplate)
