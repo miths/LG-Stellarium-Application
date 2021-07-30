@@ -53,6 +53,7 @@ function config_stel(){
     config.plugins_load_at_startup.Exoplanets= true;
 
     config.Exoplanets.enable_at_startup= true;
+    config.Exoplanets.distribution_enabled= true;
     config.Satellites.auto_add_enabled= true;
     config.Satellites.hide_invisible_satellites= true;
 
