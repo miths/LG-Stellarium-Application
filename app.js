@@ -191,6 +191,7 @@ function config_stel(){
     config.Exoplanets= Exoplanets;
     config.Pulsars= Pulsars;
     config.Quasars= Quasars;
+    config.Satellites= Satellites;
 
     // config.plugins_load_at_startup.Novae= true;
     // config.plugins_load_at_startup.Satellites= true;
