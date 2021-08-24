@@ -10,7 +10,8 @@ app.on('ready', ()=>{
             nodeIntegration: true,
             contextIsolation: false,
             enableRemoteModule: true,
-        }
+        },
+        width: 830
     })
     win.loadFile('index.html')
     // win.webContents.openDevTools();
